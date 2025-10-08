@@ -32,7 +32,7 @@ var outPath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
 
 try
 {
-	File.WriteAllText(outPath, BuildRtoContent(ordered));
+	File.WriteAllText(outPath, BuildRTOContent(ordered));
 	Console.WriteLine($"Written: {outPath}");
 }
 catch (Exception ex)
@@ -103,7 +103,7 @@ static void Shuffle<T>(IList<T> list)
 	}
 }
 
-static string BuildRtoContent(IList<Tool> ordered)
+static string BuildRTOContent(IList<Tool> ordered)
 {
 	var sb = new System.Text.StringBuilder();
 	sb.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");

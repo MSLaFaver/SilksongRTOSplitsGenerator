@@ -16,18 +16,15 @@
     <EmbeddedResource Include="Tools.json" />
   </ItemGroup>
   <Target Name="CleanBinAndObjBeforeRestore" BeforeTargets="Restore">
-    <Message Text="Cleaning project bin and obj folders before restore..." Importance="High" />
     <RemoveDir Directories="$(MSBuildProjectDirectory)\bin" />
     <RemoveDir Directories="$(MSBuildProjectDirectory)\obj" />
   </Target>
 
   <Target Name="CleanBinBeforeBuild" BeforeTargets="BeforeBuild">
-    <Message Text="Cleaning project bin folder before build..." Importance="High" />
     <RemoveDir Directories="$(MSBuildProjectDirectory)\bin" />
   </Target>
 
   <Target Name="PublishAfterBuild" AfterTargets="Build" Condition="'$(BuildingPublish)' != 'true'">
-    <Message Text="Running Publish to produce single-file self-contained EXE..." Importance="High" />
     <MSBuild Projects="$(MSBuildProjectFullPath)" Targets="Publish"
              Properties="Configuration=$(Configuration);RuntimeIdentifier=$(RuntimeIdentifier);SelfContained=$(SelfContained);PublishSingleFile=$(PublishSingleFile);EnableCompressionInSingleFile=$(EnableCompressionInSingleFile);PublishTrimmed=$(PublishTrimmed);BuildingPublish=true" />
   </Target>
