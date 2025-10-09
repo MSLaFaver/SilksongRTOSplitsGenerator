@@ -97,12 +97,12 @@
 	{
 		"name": "Plasmium Phial",
 		"color": "red",
-		"prerequisites": []
+		"prerequisites": [ "Needle Phial" ]
 	},
 	{
 		"name": "Needle Phial",
 		"color": "red",
-		"prerequisites": [ "Plasmium Phial" ]
+		"prerequisites": []
 	},
 
 	{
