@@ -204,8 +204,11 @@
 		"name": "Longclaw",
 		"color": "blue",
 		"prerequisites": [
-			[ "Flintslate", "Pimpillo", "Wispfire Lantern", "Voltvessels" ],
-			[ "Sting Shard", "Longpin", "Needle Phial" ]
+			[
+				"Sting Shard",
+				"Longpin",
+				[ "Needle Phial", "!Plasmium Phial" ]
+			]
 		]
 	},
 	{
