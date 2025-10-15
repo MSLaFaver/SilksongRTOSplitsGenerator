@@ -1,31 +1,38 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-  <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-  <PropertyGroup>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <SelfContained>true</SelfContained>
-    <PublishSingleFile>true</PublishSingleFile>
-    <PublishTrimmed>false</PublishTrimmed>
-    <EnableCompressionInSingleFile>false</EnableCompressionInSingleFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Tools.json" />
-  </ItemGroup>
-  <Target Name="CleanBinAndObjBeforeRestore" BeforeTargets="Restore">
-    <RemoveDir Directories="$(MSBuildProjectDirectory)\bin" />
-    <RemoveDir Directories="$(MSBuildProjectDirectory)\obj" />
-  </Target>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net9.0</TargetFramework>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<PropertyGroup>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<SelfContained>true</SelfContained>
+		<PublishSingleFile>true</PublishSingleFile>
+		<PublishTrimmed>false</PublishTrimmed>
+		<EnableCompressionInSingleFile>false</EnableCompressionInSingleFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Tools.json" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="img\**\*.*" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Drawing.Common" Version="9.0.10" />
+		<PackageReference Include="System.Runtime.Serialization.Formatters" Version="9.0.10" />
+	</ItemGroup>
+	<Target Name="CleanBinAndObjBeforeRestore" BeforeTargets="Restore">
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\bin" />
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\obj" />
+	</Target>
 
-  <Target Name="CleanBinBeforeBuild" BeforeTargets="BeforeBuild">
-    <RemoveDir Directories="$(MSBuildProjectDirectory)\bin" />
-  </Target>
+	<Target Name="CleanBinBeforeBuild" BeforeTargets="BeforeBuild">
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\bin" />
+	</Target>
 
-  <Target Name="PublishAfterBuild" AfterTargets="Build" Condition="'$(BuildingPublish)' != 'true'">
-    <MSBuild Projects="$(MSBuildProjectFullPath)" Targets="Publish"
-             Properties="Configuration=$(Configuration);RuntimeIdentifier=$(RuntimeIdentifier);SelfContained=$(SelfContained);PublishSingleFile=$(PublishSingleFile);EnableCompressionInSingleFile=$(EnableCompressionInSingleFile);PublishTrimmed=$(PublishTrimmed);BuildingPublish=true" />
-  </Target>
+	<Target Name="PublishAfterBuild" AfterTargets="Build" Condition="'$(BuildingPublish)' != 'true'">
+		<MSBuild Projects="$(MSBuildProjectFullPath)" Targets="Publish" Properties="Configuration=$(Configuration);RuntimeIdentifier=$(RuntimeIdentifier);SelfContained=$(SelfContained);PublishSingleFile=$(PublishSingleFile);EnableCompressionInSingleFile=$(EnableCompressionInSingleFile);PublishTrimmed=$(PublishTrimmed);BuildingPublish=true" />
+	</Target>
 </Project>

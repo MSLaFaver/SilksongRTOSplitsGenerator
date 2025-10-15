@@ -1,33 +1,29 @@
 [
 	{
 		"name": "Straight Pin",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Threefold Pin",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Sting Shard",
 		"color": "red",
-		"prerequisites": []
+		"cost": 140
 	},
 	{
 		"name": "Tacks",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Longpin",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Curveclaw",
 		"color": "red",
-		"prerequisites": []
+		"cost": 140
 	},
 	{
 		"name": "Curvesickle",
@@ -36,63 +32,52 @@
 	},
 	{
 		"name": "Throwing Ring",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Pimpillo",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Conchcutter",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Silkshot",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Delver's Drill",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Cogwork Wheel",
 		"color": "red",
-		"prerequisites": []
+		"cost": 360
 	},
 	{
 		"name": "Cogfly",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Rosary Cannon",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Voltvessels",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Flintslate",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Snare Setter",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Flea Brew",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 	{
 		"name": "Plasmium Phial",
@@ -101,14 +86,12 @@
 	},
 	{
 		"name": "Needle Phial",
-		"color": "red",
-		"prerequisites": []
+		"color": "red"
 	},
 
 	{
 		"name": "Druid's Eye",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Druid's Eyes",
@@ -118,87 +101,75 @@
 	{
 		"name": "Magma Bell",
 		"color": "blue",
-		"prerequisites": []
+		"cost": 110
 	},
 	{
 		"name": "Warding Bell",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Pollip Pouch",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Fractured Mask",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Multibinder",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Weavelight",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Sawtooth Circlet",
 		"color": "blue",
-		"prerequisites": []
+		"cost": 230
 	},
 	{
 		"name": "Injector Band",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Spool Extender",
 		"color": "blue",
-		"prerequisites": []
+		"cost": 720
 	},
 	{
 		"name": "Reserve Bind",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Claw Mirror",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
-		"name": "Claw Mirrors",
+		"name": "Dark Mirror",
 		"color": "blue",
 		"prerequisites": [ "Claw Mirror", "Throwing Ring", "Snare Setter" ]
 	},
 	{
 		"name": "Memory Crystal",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Snitch Pick",
 		"color": "blue",
-		"prerequisites": []
+		"cost": 740
 	},
 	{
 		"name": "Volt Filament",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Quick Sling",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Wreath of Purity",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Longclaw",
@@ -213,13 +184,11 @@
 	},
 	{
 		"name": "Wispfire Lantern",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Egg of Flealia",
-		"color": "blue",
-		"prerequisites": []
+		"color": "blue"
 	},
 	{
 		"name": "Pin Badge",
@@ -230,61 +199,57 @@
 	{
 		"name": "Compass",
 		"color": "yellow",
-		"prerequisites": []
+		"cost": 70
 	},
 	{
 		"name": "Shard Pendant",
-		"color": "yellow",
-		"prerequisites": []
+		"color": "yellow"
 	},
 	{
 		"name": "Magnetite Brooch",
 		"color": "yellow",
-		"prerequisites": []
+		"cost": 220
 	},
 	{
 		"name": "Weighted Belt",
 		"color": "yellow",
-		"prerequisites": []
+		"cost": 160
 	},
 	{
 		"name": "Barbed Bracelet",
-		"color": "yellow",
-		"prerequisites": []
+		"color": "yellow"
 	},
 	{
 		"name": "Dead Bug's Purse",
-		"color": "yellow",
-		"prerequisites": []
+		"color": "yellow"
 	},
 	{
 		"name": "Magnetite Dice",
 		"color": "yellow",
-		"prerequisites": []
+		"cost": 300
 	},
 	{
 		"name": "Scuttlebrace",
 		"color": "yellow",
-		"prerequisites": []
+		"cost": 140
 	},
 	{
 		"name": "Ascendant's Grip",
 		"color": "yellow",
-		"prerequisites": []
+		"cost": 350
 	},
 	{
 		"name": "Spider Strings",
 		"color": "yellow",
-		"prerequisites": []
+		"cost": 320
 	},
 	{
 		"name": "Silkspeed Anklets",
-		"color": "yellow",
-		"prerequisites": []
+		"color": "yellow"
 	},
 	{
 		"name": "Thief's Mark",
 		"color": "yellow",
-		"prerequisites": []
+		"cost": 350
 	}
 ]

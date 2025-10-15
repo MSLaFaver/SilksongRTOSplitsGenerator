@@ -1,7 +1,10 @@
+using Microsoft.VisualBasic;
+using RandomToolOrder;
+using System.Drawing;
 using System.Reflection;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using RandomToolOrder;
 
 bool DEBUG = false;
 
@@ -45,6 +48,10 @@ while (true)
 			Console.Error.WriteLine(ex.Message);
 			return Exit(1, DEBUG);
 		}
+	}
+	else
+	{
+		Console.WriteLine($"\nTotal cost: {tools.Where(t => t.Cost.HasValue).Sum(t => t.Cost!.Value)} Rosaries");
 	}
 
 	var exit = Exit(0, DEBUG);
@@ -167,7 +174,22 @@ static string BuildRTOContent(IList<Tool> ordered)
 
 		sb.AppendLine("\t\t<Segment>");
 		sb.AppendLine($"\t\t\t<Name>{System.Security.SecurityElement.Escape(t.Name) ?? t.Name}</Name>");
-		sb.AppendLine("\t\t\t<Icon />");
+
+		var imgFileName = t.Name.Replace("'", string.Empty).Replace(' ', '_') + ".png";
+		var asm = Assembly.GetExecutingAssembly();
+
+		try
+		{
+			using var rs = asm.GetManifestResourceStream($"{asm.GetName().Name}.img.{imgFileName}");
+			using var ms = new MemoryStream();
+			new BinaryFormatter().Serialize(ms, Image.FromStream(rs!)); // BinaryFormatter is obsolete but kept for LiveSplit compatibility
+			sb.AppendLine($"\t\t\t<Icon><![CDATA[{Convert.ToBase64String(ms.ToArray())}]]></Icon>");
+		}
+		catch
+		{
+			sb.AppendLine("\t\t\t<Icon />");
+		}
+
 		sb.AppendLine("\t\t\t<SplitTimes>");
 		sb.AppendLine("\t\t\t\t<SplitTime name=\"Personal Best\" />");
 		sb.AppendLine("\t\t\t</SplitTimes>");
@@ -276,7 +298,6 @@ static void PrintPrerequisites(IList<Tool> ordered)
 					var refTool = ordered[pos2];
 					parts.Add($"{(pos2 + 1).ToString("D2")}. {Color(refTool.Color)}{refTool.Name}{Color()}");
 				}
-				
 				Console.WriteLine($"  [{opts}] -> {string.Join(" / ", parts)}");
 			}
 		}
@@ -322,6 +343,7 @@ namespace RandomToolOrder
 		public string Name { get; set; } = string.Empty;
 		public string Color { get; set; } = string.Empty;
 		public List<List<List<string>>>? Prerequisites { get; set; }
+		public int? Cost { get; set; }
 	}
 
 	public class PrerequisitesConverter : JsonConverter<List<List<List<string>>>?>
