@@ -1,4 +1,3 @@
-using Microsoft.VisualBasic;
 using RandomToolOrder;
 using System.Drawing;
 using System.Reflection;
@@ -199,7 +198,25 @@ static string BuildRTOContent(IList<Tool> ordered)
 	}
 
 	sb.AppendLine("\t</Segments>");
+
+	sb.AppendLine("\t<AutoSplitterSettings>");
+	sb.AppendLine("\t\t<Version>1.0</Version>");
+	sb.AppendLine("\t\t<CustomSettings>");
+	sb.AppendLine("\t\t\t<Setting id=\"script_name\" type=\"string\" value=\"silksong_autosplit_wasm\"/>");
+	sb.AppendLine("\t\t\t<Setting id=\"splits\" type=\"list\">");
+	sb.AppendLine("\t\t\t\t<Setting type=\"string\" value=\"StartNewGame\"></Setting>");
+
+	for (var i = 0; i < ordered.Count; i++)
+	{
+		sb.AppendLine("\t\t\t\t<Setting type=\"string\" value=\"ManualSplit\"></Setting>");
+	}
+
+	sb.AppendLine("\t\t\t</Setting>");
+	sb.AppendLine("\t\t</CustomSettings>");
+	sb.AppendLine("\t</AutoSplitterSettings>");
+
 	sb.AppendLine("</Run>");
+
 	return sb.ToString();
 }
 
@@ -407,4 +424,3 @@ namespace RandomToolOrder
 		}
 	}
 }
-
